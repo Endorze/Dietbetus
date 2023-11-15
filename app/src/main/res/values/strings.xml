@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Dietbetus</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="ActionFragmentOptions">
+        <item></item>
+        <item>Insulin Rapportering</item>
+        <item>Matlagnings recept</item>
+    </string-array>
+</resources>

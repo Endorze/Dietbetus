@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainMenuFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="Nedan finner du två fält som du behöver fylla i.\nDessa består av hur mycket dygnsinsulin du tar, och ungefärlig summa av dagligt intag av snabbverkande insulin.\n\nDenna information är nödvändig för att kalkylera hur många insulinenheter du estimeras att ta till maten."
+            tools:layout_editor_absoluteX="140dp"
+            tools:layout_editor_absoluteY="295dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"/>
+
+        <EditText
+            android:id="@+id/DailyInsulinIntakeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Dagligt Insulin"
+            android:inputType="number" />
+
+        <EditText
+            android:layout_marginTop="20dp"
+            android:id="@+id/LongTimeInsulinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Långtidsverkande"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/continueFromMainMenuButton"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="341dp"
+            android:text="Gå vidare"
+            android:backgroundTint="@color/buttonColor">
+        </Button>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</FrameLayout>
