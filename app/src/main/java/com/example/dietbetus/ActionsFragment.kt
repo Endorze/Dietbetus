@@ -12,11 +12,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 
 
 class ActionsFragment : Fragment() {
     private lateinit var binding: FragmentActionsBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +28,6 @@ class ActionsFragment : Fragment() {
         var spinner: Spinner = binding.spinnerActionFragment
 
         val context = this.context
-        getActionBar
 
         if (context == null) {
             parentFragmentManager.popBackStack()
@@ -52,15 +53,12 @@ class ActionsFragment : Fragment() {
                 val selectedOption = parent?.getItemAtPosition(position).toString()
                 when (selectedOption) {
                     "Insulin Rapportering" -> {
-                        val action =
-                            ActionsFragmentDirections.actionActionsFragmentToInsulinRapportering()
-                        Navigation.findNavController(binding.root).navigate(action)
+
                     }
                 }
             }
-
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                TODO("Not yet implemented")
+                
             }
         }
         return binding.root

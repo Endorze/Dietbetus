@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_navigation"
-    app:startDestination="@id/mainMenuFragment">
+    android:id="@+id/my_navigation">
 
-    <fragment
-        android:id="@+id/mainMenuFragment"
-        android:name="com.example.dietbetus.MainMenuFragment"
-        android:label="fragment_main_menu"
-        tools:layout="@layout/fragment_main_menu" >
-        <action
-            android:id="@+id/action_mainMenuFragment_to_actionsFragment"
-            app:destination="@id/actionsFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/actionsFragment"
-        android:name="com.example.dietbetus.ActionsFragment"
-        android:label="fragment_actions"
-        tools:layout="@layout/fragment_actions" >
-        <argument
-            android:name="LongtimeInsulin"
-            app:argType="integer"
-            android:defaultValue="0" />
-        <argument
-            android:name="DailyIntakeInsulin"
-            android:defaultValue="0" />
-        <action
-            android:id="@+id/action_actionsFragment_to_insulinRapportering"
-            app:destination="@id/insulinRapportering" />
-    </fragment>
-    <fragment
-        android:id="@+id/insulinRapportering"
-        android:name="com.example.dietbetus.InsulinRapportering"
-        android:label="fragment_insulin_rapportering"
-        tools:layout="@layout/fragment_insulin_rapportering" />
 </navigation>

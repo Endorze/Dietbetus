@@ -23,8 +23,7 @@ class MainMenuFragment : Fragment() {
             var dagligtInsulin = binding.DailyInsulinIntakeText.text.toString().toInt()
             var longInsulin = binding.LongTimeInsulinText.text.toString().toInt()
 
-            val action = MainMenuFragmentDirections.actionMainMenuFragmentToActionsFragment(longInsulin, dagligtInsulin)
-            Navigation.findNavController(binding.root).navigate(action)
+
         }
         return binding.root
     }
