@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/my_navigation">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/threeChoicesFragment">
 
+    <fragment
+        android:id="@+id/rapportering"
+        android:name="com.example.dietbetus.Rapportering"
+        android:label="fragment_rapportering"
+        tools:layout="@layout/fragment_rapportering" />
+    <fragment
+        android:id="@+id/threeChoicesFragment"
+        android:name="com.example.dietbetus.ThreeChoicesFragment"
+        android:label="ThreeChoicesFragment" >
+        <action
+            android:id="@+id/action_threeChoicesFragment_to_rapportering"
+            app:destination="@id/rapportering" />
+        <action
+            android:id="@+id/action_threeChoicesFragment_to_calculateCarbsFragment"
+            app:destination="@id/calculateCarbsFragment" />
+        <action
+            android:id="@+id/action_threeChoicesFragment_to_recipesFragment"
+            app:destination="@id/recipesFragment" />
+        <action
+            android:id="@+id/action_threeChoicesFragment_to_calculateInsulinFragment"
+            app:destination="@id/calculateInsulinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculateCarbsFragment"
+        android:name="com.example.dietbetus.CalculateCarbsFragment"
+        android:label="fragment_calculate_carbs"
+        tools:layout="@layout/fragment_calculate_carbs" />
+    <fragment
+        android:id="@+id/recipesFragment"
+        android:name="com.example.dietbetus.RecipesFragment"
+        android:label="fragment_recipes"
+        tools:layout="@layout/fragment_recipes" />
+    <fragment
+        android:id="@+id/calculateInsulinFragment"
+        android:name="com.example.dietbetus.CalculateInsulinFragment"
+        android:label="fragment_calculate_insulin"
+        tools:layout="@layout/fragment_calculate_insulin" />
 </navigation>

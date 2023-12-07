@@ -3,42 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/diabetesmainmenubackground"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
-
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/my_navigation"/>
 
-   <com.google.android.material.tabs.TabLayout
-       android:id="@+id/tabLayout"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:tabMode="fixed"
-       app:tabGravity="fill">
-
-       <com.google.android.material.tabs.TabItem
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="Insulin Calculator"/>
-       <com.google.android.material.tabs.TabItem
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text=""
-           android:icon="@drawable/ic_action_name"/>
-       <com.google.android.material.tabs.TabItem
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text=""
-           android:icon="@drawable/ic_settings"/>
-   </com.google.android.material.tabs.TabLayout>
-
-
-    
 </androidx.appcompat.widget.LinearLayoutCompat>

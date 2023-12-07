@@ -10,50 +10,52 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center|top"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corners"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="110dp"
+        android:elevation="10dp">
+
+        <ImageView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/neutralbeige"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="10sp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="Nedan finner du två fält som du behöver fylla i.\nDessa består av hur mycket dygnsinsulin du tar, och ungefärlig summa av dagligt intag av snabbverkande insulin.\n\nDenna information är nödvändig för att kalkylera hur många insulinenheter du estimeras att ta till maten."
+            android:text="Dietbetes"
+            android:textSize="38sp"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="140dp"
             tools:layout_editor_absoluteY="295dp" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"/>
+            android:layout_marginTop="30dp"/>
 
-        <EditText
-            android:id="@+id/DailyInsulinIntakeText"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Dagligt Insulin"
-            android:inputType="number" />
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="16dp"
+            android:text="Dietbetes är en nyskapad applikation som ska agera hjälpmedel för folk som har drabbats av diabetes, här kan du finna funktioner som hjälper dig räkna ut hur mycket insulin du ska ta beroende på kolhydrater.\n\nDu kommer kunna ta anteckningar över vilka tidpunkter du tar insulin, så att du snabbt kan gå in och kolla när du sist tog insulin ifall du kommer ihåg att anteckna.\n\n\nVersion 1.0\nSkapare: Alexander Hallgren"/>
 
-        <EditText
-            android:layout_marginTop="20dp"
-            android:id="@+id/LongTimeInsulinText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Långtidsverkande"
-            android:inputType="number" />
+        <ImageView
 
-        <Button
-            android:id="@+id/continueFromMainMenuButton"
-            android:layout_marginTop="50dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="161dp"
-            tools:layout_editor_absoluteY="341dp"
-            android:text="Gå vidare"
-            android:backgroundTint="@color/buttonColor">
-        </Button>
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/neutralbeige"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 

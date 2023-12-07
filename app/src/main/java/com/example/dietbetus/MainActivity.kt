@@ -16,40 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        var tabLayout : TabLayout
-        var viewPager2 : ViewPager2
-        var myViewPagerAdaper : MyViewPagerAdapter
-
-        tabLayout = binding.tabLayout
-        viewPager2 = binding.viewPager
-
-        myViewPagerAdaper = MyViewPagerAdapter(this)
-        viewPager2.setAdapter(myViewPagerAdaper)
-        viewPager2.setCurrentItem(1)
-
-        tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab?) {
-                if (tab != null) {
-                    viewPager2.setCurrentItem(tab.getPosition())
-                }
-            }
-
-            override fun onTabUnselected(tab: TabLayout.Tab?) {
-
-            }
-
-            override fun onTabReselected(tab: TabLayout.Tab?) {
-
-            }
-        })
-        viewPager2.registerOnPageChangeCallback(object: ViewPager2.OnPageChangeCallback() {
-
-            override fun onPageSelected(position: Int) {
-                super.onPageSelected(position)
-                tabLayout.getTabAt(position)?.select()
-            }
-        })
-        tabLayout.selectTab(tabLayout.getTabAt(1))
 
         setContentView(binding.root)
 

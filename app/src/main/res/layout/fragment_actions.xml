@@ -6,55 +6,105 @@
     android:layout_height="match_parent"
     tools:context=".ActionsFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
 
-        <Spinner
-
-            android:id="@+id/spinnerActionFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent">
 
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/spinnerActionFragment"
 
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
 
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="641dp"
+            <Spinner
 
-            android:background="@drawable/rounded_corners"
-            android:elevation="10dp"
-            >
-
-            <TextView
+                android:id="@+id/spinnerActionFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                android:paddingVertical="8dp"
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
 
-                android:paddingHorizontal="16dp"
-                android:text="Välkommen! Nedan finner du ett antal funktioner som kanske kan vara dig till hjälp."
-                />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="16dp"
 
-        </LinearLayout>
+                android:layout_marginBottom="641dp"
+                android:background="@drawable/rounded_corners"
+
+                android:elevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerActionFragment">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:paddingHorizontal="16dp"
+
+                    android:paddingVertical="8dp"
+                    android:text="Välkommen! Nedan finner du ett antal funktioner som kanske kan vara dig till hjälp." />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hej" />
 
 
+            </LinearLayout>
 
+            <Button
+                android:id="@+id/countCarbsButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="107dp"
+                android:backgroundTint="@color/buttonColor"
+                android:text="Beräkna Kolhydratskvoten"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/countInsulinFragilityButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:backgroundTint="@color/buttonColor"
+                android:text="Beräkna Insulinkänslighet"
+                app:layout_constraintEnd_toEndOf="@+id/countCarbsButton"
+                app:layout_constraintStart_toStartOf="@+id/countCarbsButton"
+                app:layout_constraintTop_toBottomOf="@+id/countCarbsButton" />
+
+            <Button
+                android:id="@+id/healthyRecipeButton"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:backgroundTint="@color/buttonColor"
+                android:text="Nyttiga Recept"
+                app:layout_constraintEnd_toEndOf="@+id/countInsulinFragilityButton"
+                app:layout_constraintStart_toStartOf="@+id/countInsulinFragilityButton"
+                app:layout_constraintTop_toBottomOf="@+id/countInsulinFragilityButton" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="46dp"
+                android:backgroundTint="@color/buttonColor"
+                android:text="Informativa Länkar om diabetes"
+                app:layout_constraintEnd_toEndOf="@+id/healthyRecipeButton"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toStartOf="@+id/healthyRecipeButton"
+                app:layout_constraintTop_toBottomOf="@+id/healthyRecipeButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </FrameLayout>

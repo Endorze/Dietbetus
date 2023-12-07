@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculateCarbsFragment"
+    android:background="@drawable/diabetesmainmenubackground">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="24dp"
+        android:background="@drawable/rounded_corners"
+        android:gravity="center|top"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Kolhydratskvoten"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:text="Hur mycket insulin ska du ta till dina kolhydrater? \nDet kan du beräkna genom att ange ditt dagliga basinsulin, samt din dygnsdos." />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp" />
+
+        <EditText
+            android:id="@+id/baseInsulinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Bas-insulin"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/dailyInsulinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint="Dygns-insulin"
+            android:inputType="number" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/carbsResultText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:padding="20dp"
+            android:text="Fakta baserad på Kolhydratskvoten (500-regeln)"/>
+
+        <Button
+            android:id="@+id/saveValuesCalculateCarbsButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Kalkylera" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

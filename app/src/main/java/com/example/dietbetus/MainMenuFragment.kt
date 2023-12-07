@@ -19,12 +19,7 @@ class MainMenuFragment : Fragment() {
     ): View? {
         binding = FragmentMainMenuBinding.inflate(layoutInflater)
 
-        binding.continueFromMainMenuButton.setOnClickListener {
-            var dagligtInsulin = binding.DailyInsulinIntakeText.text.toString().toInt()
-            var longInsulin = binding.LongTimeInsulinText.text.toString().toInt()
 
-
-        }
         return binding.root
     }
 }

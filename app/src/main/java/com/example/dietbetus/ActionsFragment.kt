@@ -14,6 +14,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 
 class ActionsFragment : Fragment() {
@@ -39,6 +40,14 @@ class ActionsFragment : Fragment() {
             R.array.ActionFragmentOptions,
             android.R.layout.simple_spinner_item
         )
+        binding.countCarbsButton.setOnClickListener {
+            val action = ThreeChoicesFragmentDirections.actionThreeChoicesFragmentToCalculateCarbsFragment()
+            Navigation.findNavController(binding.root).navigate(action)
+        }
+        binding.countInsulinFragilityButton.setOnClickListener {
+            val action = ThreeChoicesFragmentDirections.actionThreeChoicesFragmentToCalculateInsulinFragment()
+            Navigation.findNavController(binding.root).navigate(action)
+        }
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
@@ -53,6 +62,9 @@ class ActionsFragment : Fragment() {
                 val selectedOption = parent?.getItemAtPosition(position).toString()
                 when (selectedOption) {
                     "Insulin Rapportering" -> {
+                        val action = ThreeChoicesFragmentDirections.actionThreeChoicesFragmentToRapportering()
+                        Navigation.findNavController(binding.root).navigate(action)
+
 
                     }
                 }
