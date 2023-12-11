@@ -3,8 +3,26 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="ActionFragmentOptions">
-        <item></item>
+        <item>Rapportera</item>
         <item>Insulin Rapportering</item>
-        <item>Matlagnings recept</item>
+
     </string-array>
+
+    <string-array name="foodRecipes">
+        <item></item>
+        <item>Köttbullar med mos och gräddsås</item>
+        <item>Ärtsoppa med pannkakor</item>
+        <item>Pasta carbonara</item>
+        <item>Köttfärssås med pasta</item>
+        <item>Sushi</item>
+        <item>Korv med bröd</item>
+        <item>Panerad fisk med Dillsås</item>
+    </string-array>
+
+    <string-array name="portionSizes">
+        <item>1 Portion</item>
+        <item>2 Portioner</item>
+        <item>3 Portioner</item>
+    </string-array>
+
 </resources>

@@ -20,7 +20,6 @@ class ThreeChoicesFragment : Fragment() {
     ): View? {
         binding = FragmentThreeChoicesBinding.inflate(layoutInflater)
 
-
         var tabLayout : TabLayout
         var viewPager2 : ViewPager2
         var myViewPagerAdaper : MyViewPagerAdapter

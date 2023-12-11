@@ -1,59 +1,106 @@
 package com.example.dietbetus
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import androidx.core.view.isVisible
+import com.example.dietbetus.databinding.FragmentRecipesBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [RecipesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RecipesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentRecipesBinding
+    private lateinit var selectedRecipe: Dish
+    private lateinit var portionSize: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_recipes, container, false)
+
+
+        binding = FragmentRecipesBinding.inflate(layoutInflater)
+
+        val recipeSpinner: Spinner = binding.spinnerChooseFood
+        val portionSpinner: Spinner = binding.spinnerChooseSize
+        val context = this.context
+        if (context == null) {
+            parentFragmentManager.popBackStack()
+            return null
+        }
+        val dishAdapter : ArrayAdapter<Dish> = ArrayAdapter(context, android.R.layout.simple_spinner_item, Dish.values())
+
+        val portionAdapter = ArrayAdapter.createFromResource(
+            context,
+            R.array.portionSizes,
+            android.R.layout.simple_spinner_item
+        )
+        portionAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        portionSpinner.adapter = portionAdapter
+
+        dishAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        recipeSpinner.adapter = dishAdapter
+
+        portionSize = "1 Portion"
+
+        recipeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                selectedRecipe = Dish.values()[position]
+                binding.recipeText.text = "Du har valt ${selectedRecipe.dishName}"
+                    Log.i("RecipesFragment", "Innan bilden ska laddas in")
+                    binding.foodImage.setImageResource(selectedRecipe.photo)
+                    Log.i("RecipesFragment", "Efter bilden ska ha laddats in")
+                    updateCalories(selectedRecipe, portionSize)
+
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                binding.recipeText.text = ""
+            }
+        }
+        portionSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                portionSize = parent?.getItemAtPosition(position).toString()
+                binding.portionText.text = "${portionSize}"
+                updateCalories(selectedRecipe, portionSize)
+            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                binding.portionText.text = ""
+            }
+        }
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RecipesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RecipesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    private fun updateCalories(recipe: Dish, portionSize: String) {
+        if (!::portionSize.isInitialized) {
+            // Låt användaren välja en portionsstorlek först
+            return
+        }
+        val noPortions: Int = when {
+            portionSize == "1 Portion" -> 1
+            portionSize == "2 Portioner" -> 2
+            portionSize == "3 Portioner" -> 3
+            else -> 0
+        }
+
+        val calories = recipe.getCaloriesPerPortion();
+        val kolhydrater = recipe.getCarbonhydratesPerPortion()
+        val portionWeight = recipe.portionSize
+
+        binding.caloriesText.text = "${calories * noPortions} kalorier, ${kolhydrater * noPortions} kolhydrater\nPortionsvikt motsvarar ${portionWeight * noPortions}g"
     }
 }

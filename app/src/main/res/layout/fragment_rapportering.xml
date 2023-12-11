@@ -3,12 +3,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Rapportering">
+    tools:context=".Rapportering"
+    android:background="@drawable/diabetesmainmenubackground">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="top|center"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:background="@drawable/rounded_corners"
+        >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/neutralbeige"
+            android:scaleType="fitXY"/>
+        <TextView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Senast rapporterad Insulininjektion"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/white">
+        </Space>
+
+        <TextView
+            android:id="@+id/latestInsulinTakenText"
+            android:text="Hej"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="16dp"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="120dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vänligen ange insulinmängd"/>
+
+        <EditText
+            android:id="@+id/editTextInsulinInput"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/saveInsulinReportButton"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/buttonColor"
+            android:text="Spara Info"/>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </FrameLayout>

@@ -26,6 +26,9 @@
         <action
             android:id="@+id/action_threeChoicesFragment_to_calculateInsulinFragment"
             app:destination="@id/calculateInsulinFragment" />
+        <action
+            android:id="@+id/action_threeChoicesFragment_to_informativeLinksFragment"
+            app:destination="@id/informativeLinksFragment" />
     </fragment>
     <fragment
         android:id="@+id/calculateCarbsFragment"
@@ -42,4 +45,9 @@
         android:name="com.example.dietbetus.CalculateInsulinFragment"
         android:label="fragment_calculate_insulin"
         tools:layout="@layout/fragment_calculate_insulin" />
+    <fragment
+        android:id="@+id/informativeLinksFragment"
+        android:name="com.example.dietbetus.InformativeLinksFragment"
+        android:label="fragment_informative_links"
+        tools:layout="@layout/fragment_informative_links" />
 </navigation>

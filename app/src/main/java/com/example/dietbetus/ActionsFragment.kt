@@ -48,6 +48,15 @@ class ActionsFragment : Fragment() {
             val action = ThreeChoicesFragmentDirections.actionThreeChoicesFragmentToCalculateInsulinFragment()
             Navigation.findNavController(binding.root).navigate(action)
         }
+        binding.healthyRecipeButton.setOnClickListener {
+            val action = ThreeChoicesFragmentDirections.actionThreeChoicesFragmentToRecipesFragment()
+            Navigation.findNavController(binding.root).navigate(action)
+        }
+        binding.informativeLinksButton.setOnClickListener {
+            val action = ThreeChoicesFragmentDirections.actionThreeChoicesFragmentToInformativeLinksFragment()
+            Navigation.findNavController(binding.root).navigate(action)
+        }
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.adapter = adapter
 
