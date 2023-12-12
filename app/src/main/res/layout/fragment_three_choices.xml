@@ -26,17 +26,14 @@
        <com.google.android.material.tabs.TabItem
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
-           android:text="Insulin Calculator"/>
+           android:text="Funktioner"/>
+
        <com.google.android.material.tabs.TabItem
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:text=""
            android:icon="@drawable/ic_action_name"/>
-       <com.google.android.material.tabs.TabItem
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text=""
-           android:icon="@drawable/ic_settings"/>
+
    </com.google.android.material.tabs.TabLayout>
 
 

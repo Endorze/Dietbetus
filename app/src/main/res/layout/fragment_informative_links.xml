@@ -4,15 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".InformativeLinksFragment"
-    android:background="@drawable/diabetesmainmenubackground"
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp">
+    android:background="@drawable/diabetesmainmenubackground">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center|top"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"

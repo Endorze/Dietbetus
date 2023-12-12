@@ -13,7 +13,7 @@ class MyViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdap
         when (position) {
             0 -> return ActionsFragment()
             1 -> return MainMenuFragment()
-            2 -> return InsulinRapportering()
+            2 -> return UserSettings()
 
             else -> return MainMenuFragment()
         }
